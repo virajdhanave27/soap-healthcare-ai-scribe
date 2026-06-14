@@ -1,6 +1,11 @@
 from fastapi import FastAPI
+from api.routes import router
 
-app = FastAPI()
+app = FastAPI(
+    title="SOAP Healthcare AI Scribe"
+)
+
+app.include_router(router)
 
 @app.get("/")
 def home():
